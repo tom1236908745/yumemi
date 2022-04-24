@@ -12,6 +12,7 @@
           {{ p.prefName }}
         </label>
       </div>
+      <Chart :checkedNames="checkedNames" :prefData="prefData" />
     </div>
   </div>
 </template>
@@ -21,16 +22,17 @@ export default {
   data() {
     return {
       prefectures: [],
+      prefData: {},
       checkedNames: [],
     };
   },
+
   async mounted() {
-    console.log("process.env.API_KEY " + process.env.API_KEY);
     const url1 = "https://opendata.resas-portal.go.jp/api/v1/prefectures";
-    const res = await this.$axios.$get(url1, {
+    this.prefData = await this.$axios.$get(url1, {
       headers: { "X-API-KEY": process.env.API_KEY },
     });
-    this.prefectures = res.result;
+    this.prefectures = this.prefData.result;
   },
 };
 </script>
