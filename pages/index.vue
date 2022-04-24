@@ -1,9 +1,10 @@
 <template>
-  <Tutorial />
+  <PrefCheckBoxes />
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import Vue from "vue";
+import PrefCheckBoxes from "~/components/PrefCheckBoxes.vue";
 
-export default Vue.extend({})
+export default Vue.extend({ components: { PrefCheckBoxes } });
 </script>
