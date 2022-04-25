@@ -1,11 +1,12 @@
 <template>
   <div>
-    <highcharts :options="chartOptions" ref="lineCharts"></highcharts>
+    <highcharts :options="chartOptions"></highcharts>
   </div>
 </template>
 
 <script>
 import { Chart } from "highcharts-vue";
+
 export default {
   components: {
     highcharts: Chart,
@@ -13,7 +14,6 @@ export default {
   props: ["checkedNames", "prefData"],
   data() {
     return {
-      loading: false,
       prefectures: [],
       seriesTmpArr: [],
       seriesArr: [],
@@ -77,20 +77,6 @@ export default {
         });
       });
     },
-  },
-  async mounted() {},
-  watch: {
-    checkedNames(val) {
-      this.seriesArr = [];
-      val.forEach((v) => {
-        this.seriesTmpArr.forEach((s) => {
-          if (v.prefName === s.name) {
-            this.seriesArr.push(s);
-          }
-        });
-      });
-      console.log("val" + val);
-    },
     async prefData(val) {
       if (val.result !== undefined || val.result !== null) {
         this.prefectures = val.result;
@@ -115,6 +101,12 @@ export default {
           })
         );
       }
+      this.reverceLoading();
+    },
+  },
+  methods: {
+    reverceLoading: function () {
+      this.$store.commit("reverceLoading");
     },
   },
 };
