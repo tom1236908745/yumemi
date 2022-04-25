@@ -26,7 +26,6 @@ export default {
       checkedNames: [],
     };
   },
-
   async mounted() {
     const url1 = "https://opendata.resas-portal.go.jp/api/v1/prefectures";
     this.prefData = await this.$axios.$get(url1, {
