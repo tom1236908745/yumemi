@@ -2,7 +2,7 @@
   <div class="container">
     <div v-show="prefectures !== null && prefectures !== undefined">
       <div class="checkBoxGroup">
-        <label
+        <div
           for="checkBox"
           v-for="p in prefectures"
           :key="p.prefCode"
@@ -15,7 +15,7 @@
             id="checkBox"
           />
           {{ p.prefName }}
-        </label>
+        </div>
       </div>
       <Chart :checkedNames="checkedNames" :prefData="prefData" />
     </div>
