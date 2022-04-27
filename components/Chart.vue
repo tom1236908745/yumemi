@@ -54,12 +54,10 @@ export default {
             "2040",
             "2045",
           ],
-          crosshair: true,
         },
         yAxis: {
-          name: "人口(万人)",
-          labels: {
-            format: "{value}",
+          title: {
+            text: "人口",
           },
         },
         series: this.seriesArr,
