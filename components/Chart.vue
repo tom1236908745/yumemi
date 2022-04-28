@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chartGroup">
     <highcharts :options="chartOptions"></highcharts>
   </div>
 </template>
@@ -109,3 +109,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.chartGroup {
+  margin: 0 1rem;
+}
+</style>

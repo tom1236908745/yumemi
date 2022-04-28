@@ -49,4 +49,22 @@ export default {
   line-height: 1.5rem;
   display: inline-block;
 }
+@media screen and (max-width: 750px) {
+  .checkBoxGroup {
+    margin: 3rem;
+  }
+  .checkBox {
+    width: 5rem;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .checkBoxGroup {
+    margin: 1rem;
+  }
+  .checkBox {
+    width: 4rem;
+    font-size: 0.5rem;
+  }
+}
 </style>
