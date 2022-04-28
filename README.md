@@ -30,7 +30,7 @@ RESAS-API の API キー[https://opendata.resas-portal.go.jp/](https://opendata.
 (↓.env ファイル) <br />
 `X-API-KEY="取得したAPI"` <br />
 `npm run dev` <br />
-[http://localhost:3000/](ttp://localhost:3000/)
+[http://localhost:3000/](http://localhost:3000/) にアクセス。
 
 ## 工夫した所
 
